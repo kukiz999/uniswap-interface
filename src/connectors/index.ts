@@ -30,9 +30,8 @@ export const injected = new InjectedConnector({
   supportedChainIds: [100]
 })
 
-// mainnet only
 export const walletconnect = new WalletConnectConnector({
-  rpc: { 1: NETWORK_URL },
+  rpc: { 100: 'https://xdai.1hive.org' },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: 15000
@@ -44,7 +43,6 @@ export const fortmatic = new FortmaticConnector({
   chainId: 1
 })
 
-// mainnet only
 export const portis = new PortisConnector({
   dAppId: PORTIS_ID ?? '',
   networks: [100]
