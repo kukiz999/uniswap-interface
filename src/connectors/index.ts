@@ -31,7 +31,7 @@ export const injected = new InjectedConnector({
 })
 
 export const walletconnect = new WalletConnectConnector({
-  rpc: { 100: 'https://xdai.1hive.org' },
+  rpc: { 100: 'https://rpc.xdaichain.com/' },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: 15000
