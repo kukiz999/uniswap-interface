@@ -17,6 +17,7 @@ import { injected, fortmatic, portis } from '../../connectors'
 import { OVERLAY_READY } from '../../connectors/Fortmatic'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AbstractConnector } from '@web3-react/abstract-connector'
+import { setupNetwork } from '../../utils/setupNetwork'
 
 const CloseIcon = styled.div`
   position: absolute;
@@ -178,9 +179,12 @@ export default function WalletModal({
     }
 
     connector &&
-      activate(connector, undefined, true).catch(error => {
+      activate(connector, undefined, true).catch(async error => {
         if (error instanceof UnsupportedChainIdError) {
-          activate(connector) // a little janky...can't use setError because the connector isn't set
+          const hasSetup = await setupNetwork()
+          if (hasSetup) {
+            activate(connector) // a little janky...can't use setError because the connector isn't set
+          }
         } else {
           setPendingError(true)
         }
