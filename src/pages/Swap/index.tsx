@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from 'uniswap-xdai-sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, Trade } from 'uniswap-xdai-sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import { isMobile } from 'react-device-detect'
@@ -19,7 +19,7 @@ import { ArrowWrapper, BottomGrouping, Dots, SwapCallbackError, Wrapper } from '
 import TradePrice from '../../components/swap/TradePrice'
 import TokenWarningModal from '../../components/TokenWarningModal'
 
-import { BETTER_TRADE_LINK_THRESHOLD, INITIAL_ALLOWED_SLIPPAGE, HONEY } from '../../constants'
+import { BETTER_TRADE_LINK_THRESHOLD, INITIAL_ALLOWED_SLIPPAGE } from '../../constants'
 import { isTradeBetter } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
@@ -42,6 +42,7 @@ import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
 import { addTokenToMetamask } from '../../utils/addTokenToMetamask'
+import tokenList from 'honeyswap-default-token-list'
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -253,9 +254,12 @@ export default function Swap() {
   ])
 
   const { ethereum } = window
-  const handleAddHnyToMM = useCallback(() => addTokenToMetamask(ethereum, HONEY), [])
-  const isHnySelected =
-    currencies[Field.INPUT]?.symbol === HONEY.symbol || currencies[Field.OUTPUT]?.symbol === HONEY.symbol
+  const handleAddTokenToMM = useCallback((address, decimals, symbol, name) => {
+    const selectedToken = new Token(ChainId.XDAI, address, decimals, symbol, name)
+    addTokenToMetamask(ethereum, selectedToken)
+  }, [])
+
+  const tokenOutputSelected = tokenList.tokens.find(t => t.symbol === currencies[Field.OUTPUT]?.symbol)
 
   return (
     <>
@@ -264,9 +268,16 @@ export default function Swap() {
         tokens={urlLoadedTokens}
         onConfirm={handleConfirmTokenWarning}
       />
-      {isHnySelected && (
+      {tokenOutputSelected && (
         <ButtonImagePlus
-          onClick={() => handleAddHnyToMM()}
+          onClick={() =>
+            handleAddTokenToMM(
+              tokenOutputSelected.address,
+              tokenOutputSelected.decimals,
+              tokenOutputSelected.symbol,
+              tokenOutputSelected.name
+            )
+          }
           style={{
             width: 'auto',
             position: 'absolute',
@@ -275,7 +286,7 @@ export default function Swap() {
             whiteSpace: 'nowrap'
           }}
         >
-          Add HNY to MetaMask
+          Add {tokenOutputSelected.symbol} to MetaMask
         </ButtonImagePlus>
       )}
       <AppBody>
