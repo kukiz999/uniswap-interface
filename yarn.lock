@@ -7929,10 +7929,10 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-honeyswap-default-token-list@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/honeyswap-default-token-list/-/honeyswap-default-token-list-2.10.0.tgz#8f67c0e6e5a00eca55676dad4e95114da491c215"
-  integrity sha512-W5TYeotKPxT45KFYFWXLqIcE4DxRu3o5xGA9kSzSPjs3mFmeZktdItOQs+Sd4nLc3heWXo3PcE1aGSg3KClt6w==
+honeyswap-default-token-list@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/honeyswap-default-token-list/-/honeyswap-default-token-list-3.0.0.tgz#fd8f97fbb6da61ef6639ace25d50b140fbdaede1"
+  integrity sha512-rdLiCwitPDQR4G+24I613qdLtisqhyY99nxtGEOrGVAjy3cZyX0Bxq4xrEd+2l3bgJfo3jejSj91U8CvFaHqgw==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"
