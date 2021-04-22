@@ -1,5 +1,5 @@
 import { Token } from 'uniswap-xdai-sdk'
-import tokenList from 'honeyswap-default-token-list'
+import tokenList from '@1hive/default-token-list'
 
 export async function addTokenToMetamask(ethereum: any, token: Token) {
   const selectedToken = tokenList.tokens.find(t => {
