@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@1hive/default-token-list@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@1hive/default-token-list/-/default-token-list-3.2.1.tgz#cd3466c08dafa7ed971cc861e35f47b42f4bad56"
+  integrity sha512-3Gb5rZFl4vZiheSPEZODGssxk7noFg7yqvKPMolersFPJTOB/t38XiKba9Dq5n7+ZW1tpRdWfR+ExIpkqSAVig==
+
 "@babel/code-frame@7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -7928,11 +7933,6 @@ home-or-tmp@^2.0.0:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
-
-honeyswap-default-token-list@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/honeyswap-default-token-list/-/honeyswap-default-token-list-2.10.0.tgz#8f67c0e6e5a00eca55676dad4e95114da491c215"
-  integrity sha512-W5TYeotKPxT45KFYFWXLqIcE4DxRu3o5xGA9kSzSPjs3mFmeZktdItOQs+Sd4nLc3heWXo3PcE1aGSg3KClt6w==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"

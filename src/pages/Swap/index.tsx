@@ -42,7 +42,7 @@ import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
 import { addTokenToMetamask } from '../../utils/addTokenToMetamask'
-import tokenList from 'honeyswap-default-token-list'
+import tokenList from '@1hive/default-token-list'
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
