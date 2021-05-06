@@ -98,10 +98,6 @@ export default function Menu() {
             <Info size={14} />
             About
           </MenuItem>
-          <MenuItem id="link" href="https://hny.farm/">
-            <Info size={14} />
-            Farm
-          </MenuItem>
           <MenuItem id="link" href="https://about.1hive.org/docs/honeyswap">
             <BookOpen size={14} />
             Docs
