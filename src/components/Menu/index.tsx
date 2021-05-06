@@ -94,13 +94,9 @@ export default function Menu() {
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://about.1hive.org">
+          <MenuItem id="link" href="https://wiki.1hive.org/">
             <Info size={14} />
             About
-          </MenuItem>
-          <MenuItem id="link" href="https://about.1hive.org/docs/honeyswap">
-            <BookOpen size={14} />
-            Docs
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
             <Code size={14} />
