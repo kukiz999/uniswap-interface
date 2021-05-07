@@ -253,8 +253,8 @@ export default function Swap() {
     onCurrencySelection
   ])
 
-  const { ethereum } = window
   const handleAddTokenToMM = useCallback((address, decimals, symbol, name) => {
+    const { ethereum } = window
     const selectedToken = new Token(ChainId.XDAI, address, decimals, symbol, name)
     addTokenToMetamask(ethereum, selectedToken)
   }, [])

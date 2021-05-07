@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Info, BookOpen, Code, PieChart, MessageCircle } from 'react-feather'
+import { Info, Code, PieChart, MessageCircle, BookOpen } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -94,23 +94,19 @@ export default function Menu() {
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://about.1hive.org">
+          <MenuItem id="link" href="https://honeyswap.org/">
             <Info size={14} />
             About
           </MenuItem>
-          <MenuItem id="link" href="https://hny.farm/">
-            <Info size={14} />
-            Farm
-          </MenuItem>
-          <MenuItem id="link" href="https://about.1hive.org/docs/honeyswap">
+          <MenuItem id="link" href="https://wiki.1hive.org/">
             <BookOpen size={14} />
-            Docs
+            Wiki
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
             <Code size={14} />
             Code
           </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/CtaEMX2U">
+          <MenuItem id="link" href="https://discord.gg/qQzctSNppQ">
             <MessageCircle size={14} />
             Help
           </MenuItem>
