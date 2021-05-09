@@ -172,8 +172,7 @@ export default function AddLiquidity({
     setAttemptingTxn(true)
 
     method(...args, {
-      ...(value ? { value } : {}),
-      gasLimit: 1000000
+      ...(value ? { value } : {})
     })
       .then(response => {
         setAttemptingTxn(false)
